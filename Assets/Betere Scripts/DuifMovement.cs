@@ -17,6 +17,7 @@ public class DuifMovement : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
     private void Update()
     {
