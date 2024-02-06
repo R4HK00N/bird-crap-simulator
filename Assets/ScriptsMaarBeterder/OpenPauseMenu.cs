@@ -13,6 +13,16 @@ public class OpenPauseMenu : MonoBehaviour
         {
             isMenuOpen = !isMenuOpen;
             menu.SetActive(isMenuOpen);
+            if(isMenuOpen)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
+            }
+            if(!isMenuOpen)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1;
+            }
         }
     }
 }
