@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7f2fb1010a0850b459a5d5d9fff86563
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Crunch Chips
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a4ccdd415eac2514989419cf3dc7f586, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
