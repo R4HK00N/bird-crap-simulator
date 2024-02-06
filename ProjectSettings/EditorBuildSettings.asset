@@ -4,18 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< Updated upstream
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SplashScreen.unity
-    guid: dd42abf62afd98c4da955f102d1cc28a
-  - enabled: 1
-    path: Assets/Scenes/Damian.unity
-    guid: 731324c7874073b49b147e507999249b
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-=======
   m_Scenes: []
->>>>>>> Stashed changes
   m_configObjects: {}
