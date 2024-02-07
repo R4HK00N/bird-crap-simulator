@@ -16,11 +16,11 @@ public class ButtonFunctions : MonoBehaviour
     public GameObject creditMenu;
     public void Startbutton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MainScene");
     }
     public void QuitGameButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Damian");
     }
     public void Quitbutton()
     {
