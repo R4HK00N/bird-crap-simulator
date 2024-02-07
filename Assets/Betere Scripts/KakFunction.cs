@@ -5,35 +5,46 @@ using UnityEngine;
 
 public class KakFunction : MonoBehaviour
 {
-    public GameObject kak;
-    public Transform kakSpawn;
-    public Vector3 kakPosition;
+    public GameObject winScreen;
+    public GameObject questScreen;
     public int prullenbakHits;
+    public int streetlightHits;
+    public int benchHits;
     public TMP_Text questText;
+    public TMP_Text counter;
 
-    public void Start()
+    public void CheckForKak(Transform other)
     {
-        kakPosition = kakSpawn.position;
-    }
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Instantiate(kak, kakPosition, Quaternion.identity);
-        }
-    }
-    public void OnTriggerEnter(Collider other)
-    {
-        if(other.transform.tag == "Prullenbak")
+        if(other.tag == "Prullenbak")
         {
             prullenbakHits++;
-            if(prullenbakHits >= 10)
+            counter.text = prullenbakHits.ToString();
+            if(prullenbakHits >= 100)
             {
-                questText.text = "Now get some street lights";
-                if(other.transform.tag == "Streetlight")
-                {
-                    questText.text = "?";
-                }
+                counter.text = "0";
+                questText.text = "Now hit 100 street lights";
+            }
+        }
+        if (other.tag == "Streetlight" && prullenbakHits >= 100)
+        {
+            streetlightHits++;
+            counter.text = streetlightHits.ToString();
+            if (streetlightHits >= 100)
+            {
+                counter.text = "0";
+                questText.text = "100 Benches, too ez";
+            }
+        }
+        if (other.tag == "Bench" && streetlightHits >= 100)
+        {
+            benchHits++;
+            counter.text = benchHits.ToString();
+            if (benchHits >= 100)
+            {
+                Time.timeScale = 0;
+                winScreen.SetActive(true);
+                questScreen.SetActive(false);
+                Cursor.lockState= CursorLockMode.None;
             }
         }
     }

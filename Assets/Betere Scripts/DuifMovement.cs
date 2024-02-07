@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class DuifMovement : MonoBehaviour
 {
+    public GameObject kak;
+    public Transform kakSpawn;
+    Vector3 kakPosition;
+
     public CharacterController controller;
     public Transform cam;
 
@@ -33,6 +37,12 @@ public class DuifMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+
+        kakPosition = kakSpawn.position;
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(kak, kakPosition, Quaternion.identity);
         }
     }
 }
